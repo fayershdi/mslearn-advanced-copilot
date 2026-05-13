@@ -30,10 +30,13 @@ def root():
 def countries():
     return list(data.keys())
 
+@app.get('/countries/{country}/cities')
+def countries():
+    return list(data.keys())
 
-@app.get('/countries/{country}/{city}/{month}')
-def monthly_average(country: str, city: str, month: str):
-    return data[country][city][month]
+@app.get('/countries/{country}/cities') 
+def countries(country: str, city: str):
+    return data[country][city]
 
 # Generate the OpenAPI schema:
 openapi_schema = app.openapi()
