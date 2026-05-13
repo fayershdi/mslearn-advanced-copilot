@@ -31,8 +31,8 @@ def countries():
     return list(data.keys())
 
 
-@app.get('/countries/{country}/{city}/{month}')
-def monthly_average(country: str, city: str, month: str):
+@app.get('/countries/{country}/{cities}/{city}')
+def monthly_average(country: str, city: str):
     return data[country][city][month]
 
 # Generate the OpenAPI schema:
